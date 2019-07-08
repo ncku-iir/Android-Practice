@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">RequestAPI</string>
+    <string name="taipei">台北</string>
+    <string name="taichung">台中</string>
+    <string name="tainan">台南</string>
+    <string name="TaipeuWeather">台北天氣</string>
+    <string name="TaichungWeather">台中天氣</string>
+    <string name="TainanWeather">台南天氣</string>
+
+</resources>
