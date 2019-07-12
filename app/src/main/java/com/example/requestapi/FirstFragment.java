@@ -17,9 +17,7 @@ import androidx.fragment.app.FragmentManager;
 
 public class FirstFragment extends Fragment {
     // UI components
-    Button taipeiBtn;
-    Button taichungBtn;
-    Button tainanBtn;
+    private Button mTaipeiBtn, mTaichungBtn, mTainanBtn;
 
 
 
@@ -46,11 +44,11 @@ public class FirstFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_first, container, false);
 
         // Initialize UI button
-        taipeiBtn = view.findViewById(R.id.TaipeiButton);
-        taichungBtn = view.findViewById(R.id.TaichungButton);
-        tainanBtn = view.findViewById(R.id.TainanButton);
+        mTaipeiBtn = view.findViewById(R.id.TaipeiButton);
+        mTaichungBtn = view.findViewById(R.id.TaichungButton);
+        mTainanBtn = view.findViewById(R.id.TainanButton);
 
-        taipeiBtn.setOnClickListener(new Button.OnClickListener(){
+        mTaipeiBtn.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View view) {
                 Log.d("FirstFragment", "Click Taipei button");
@@ -62,7 +60,7 @@ public class FirstFragment extends Fragment {
             }
         });
 
-        taichungBtn.setOnClickListener(new Button.OnClickListener(){
+        mTaichungBtn.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View view) {
                 Log.d("FirstFragment", "Click Taichung button");
@@ -74,7 +72,7 @@ public class FirstFragment extends Fragment {
             }
         });
 
-        tainanBtn.setOnClickListener(new Button.OnClickListener(){
+        mTainanBtn.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View view) {
                 Log.d("FirstFragment", "Click Tainan button");

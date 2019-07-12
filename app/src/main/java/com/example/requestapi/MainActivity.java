@@ -16,6 +16,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.container2);
 
         /*
+         * Hide title bar
+         * */
+        getSupportActionBar().hide();
+        /*
          * Hide navigate bar
          * https://stackoverflow.com/questions/21724420/how-to-hide-navigation-bar-permanently-in-android-activity
          */
