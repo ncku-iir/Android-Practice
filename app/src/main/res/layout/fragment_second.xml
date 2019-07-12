@@ -199,8 +199,8 @@
         android:id="@+id/tempTextView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="92dp"
-        android:layout_marginLeft="92dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginLeft="124dp"
         android:layout_marginTop="44dp"
         android:layout_marginBottom="8dp"
         android:text="25°c"
@@ -211,7 +211,7 @@
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toEndOf="@+id/tempTextView2"
         app:layout_constraintTop_toBottomOf="@+id/condImageView3"
-        app:layout_constraintVertical_bias="0.028" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/dayTextView4"

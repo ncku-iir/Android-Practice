@@ -7,11 +7,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import com.example.requestapi.model.Weather;
 import com.example.requestapi.retrofit.WeatherServerClient;
@@ -47,9 +49,11 @@ public class SecondFragment extends Fragment {
     // for ui
     TextView location;
     TextView currentTemp;
+    TextView todayTextView;
     TextView date1, date2, date3, date4, date5, date6 ;
     ImageView cond1, cond2, cond3, cond4, cond5, cond6;
     TextView temp1, temp2, temp3, temp4, temp5, temp6;
+    ImageButton backBtn;
 
     //weather condition
     private int[] cond_drawable_id = {R.drawable.cond_sun, R.drawable.cond_suncloud, R.drawable.cond_cloud, R.drawable.cond_rain, R.drawable.cond_thunderrain, R.drawable.cond_wind};
@@ -111,11 +115,28 @@ public class SecondFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_second, container, false);
 
         location = view.findViewById(R.id.location);
-        location.setText(city);
+        todayTextView  = view.findViewById(R.id.todayTextView);
+        backBtn = view.findViewById(R.id.home_Button);
+
         Calendar rightNow = Calendar.getInstance();
         DateFormat dateFormat = new SimpleDateFormat("MM/dd");
         String todayDateStr = dateFormat.format(rightNow.getTime());
+
+        location.setText(city);
+        todayTextView.setText(todayDateStr);
+
+        backBtn.setOnClickListener(new ImageButton.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.main_container, new FirstFragment()).commit();
+            }
+        });
+
+
         getCityWeather(view, city);
+
+
 
         return view;
     }
@@ -161,6 +182,7 @@ public class SecondFragment extends Fragment {
             if(i == 0){
                 currentTemp = view.findViewById(R.id.temp);
                 currentTemp.setText(weathers.get(i).getTemparature());
+
             }
             else{
                 // others
