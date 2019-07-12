@@ -62,6 +62,30 @@ public class FirstFragment extends Fragment {
             }
         });
 
+        taichungBtn.setOnClickListener(new Button.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Log.d("FirstFragment", "Click Taichung button");
+                Bundle bundle = new Bundle();
+                bundle.putString("city", "台中市");
+
+                FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.main_container, SecondFragment.newInstance(bundle)).commit();
+            }
+        });
+
+        tainanBtn.setOnClickListener(new Button.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Log.d("FirstFragment", "Click Tainan button");
+                Bundle bundle = new Bundle();
+                bundle.putString("city", "台南市");
+
+                FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.main_container, SecondFragment.newInstance(bundle)).commit();
+            }
+        });
+
 
         return view;
     }
